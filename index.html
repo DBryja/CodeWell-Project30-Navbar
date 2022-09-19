@@ -8,50 +8,57 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="mobile"></header>
-    <header class="desktop">
-      <div class="logo">Ondeck</div>
-      <div class="menu">
-        <ul>
-          <li>Products</li>
-          <li>Challanges</li>
-          <li>Resources</li>
-          <li>Other Links</li>
-        </ul>
-      </div>
-      <div class="buttons">
-        <button class="sign">Sign In</button>
-        <button class="try-free">Try for free</button>
-      </div>
-    </header>
-
-    <section class="main">
-      <article>
-        <h1>Ondeck is your remote <span>conference calling tool</span></h1>
-        <p class="desc">
-          Ondeck is a service that allows you to create beautiful, onllne, and
-          encrypted video calls for you and your remote team.
-        </p>
-        <button class="try-free">Try for free</button>
-        <p class="ratings">
-          5.0 Rating based on reviews from:
-          <img src="./Assets/Capterra Logo.svg" alt="Capterra" />
-          <img src="./Assets/AlternativeTo Logo.svg" alt="AlternativeTo" />
-          <img src="./Assets/Shopify Logo.svg" alt="Shopify" />
-        </p>
-      </article>
-      <img src="./Assets/Hero Image.png" alt="Phone call" />
-    </section>
-
-    <section class="trusted-by">
-      <p>Trusteed by 3+ million people at companies like</p>
-      <div class="brands">
-        <img src="./Assets/Netflix Logo.svg" alt="Netflix" class="src" />
-        <img src="./Assets/Shopify Logo.svg" alt="Shopify" class="src" />
-        <img src="./Assets/Spotify Logo.svg" alt="Spotify" class="src" />
-        <img src="./Assets/Walmart Logo.svg" alt="Walmart" class="src" />
-      </div>
-    </section>
+    <div class="wrap">
+      <header class="mobile">
+        <div class="logo"><img src="./Assets/Logo.svg" alt="logo" /></div>
+        <div class="burger">
+          <img src="./Assets/Menu.svg" alt="burger menu" />
+        </div>
+      </header>
+      <header class="desktop">
+        <div class="logo"><img src="./Assets/Logo.svg" alt="" /></div>
+        <div class="menu">
+          <ul>
+            <li>Products</li>
+            <li>Challanges</li>
+            <li>Resources</li>
+            <li>Other Links</li>
+          </ul>
+        </div>
+        <div class="buttons">
+          <button class="sign">Sign In</button>
+          <button class="try-free">Try for free</button>
+        </div>
+      </header>
+      <section class="main split">
+        <article>
+          <h1>Ondeck is your remote <span>conference calling tool</span></h1>
+          <p class="desc">
+            Ondeck is a service that allows you to create beautiful, onllne, and
+            encrypted video calls for you and your remote team.
+          </p>
+          <button class="try-free">Try for free</button>
+          <div class="ratings">
+            <p>5.0 Rating based on reviews from:</p>
+            <div class="ratings-logos">
+              <img src="./Assets/Capterra Logo.svg" alt="Capterra" />
+              <img src="./Assets/AlternativeTo Logo.svg" alt="AlternativeTo" />
+              <img src="./Assets/Capterra Logo.svg" alt="Capterra" />
+            </div>
+          </p>
+        </article>
+        <img src="./Assets/Hero Image.png" alt="Phone call" />
+      </section>
+      <section class="trusted-by">
+        <p>Trusteed by 3+ million people at companies like</p>
+        <div class="brands">
+          <img src="./Assets/Netflix Logo.svg" alt="Netflix" class="src" />
+          <img src="./Assets/Shopify Logo.svg" alt="Shopify" class="src" />
+          <img src="./Assets/Spotify Logo.svg" alt="Spotify" class="src" />
+          <img src="./Assets/Walmart Logo.svg" alt="Walmart" class="src" />
+        </div>
+      </section>
+    </div>
 
     <script src="./main.js"></script>
   </body>

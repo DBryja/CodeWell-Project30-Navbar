@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+:root {
+  --white: #fff;
+  --cream: #ffe8bf;
+  --gray: #6c6c6c;
+  --green: #133416;
+  --black: #000000;
+  --yellow: #f7b300;
+}
+
+html {
+  font-size: 10px;
+  font-family: Inter, sans-serif;
+  color: var(--gray);
+}
+
+body {
+  background-color: var(--cream);
+}
+
+.wrap {
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+/* HEADER MOBILE */
+header.mobile {
+  padding: 0 1rem 2rem 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+/* HEADER DEKSTOP */
+header.desktop {
+  display: none;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.menu ul {
+  list-style: none;
+  display: block;
+}
+.menu li {
+  display: inline-block;
+}
+/* SECTION MAIN */
+/* description */
+.main {
+  padding: 1rem 1rem 3rem 1rem;
+}
+h1 {
+  font-size: 3.2rem;
+  color: var(--black);
+  margin: 0;
+}
+h1 span {
+  color: var(--yellow);
+}
+
+p {
+  font-size: 1.6rem;
+  margin: 1.2rem 0;
+}
+
+.try-free {
+  border: none;
+  background-color: var(--green);
+  color: var(--cream);
+  font-weight: bold;
+  font-size: 1.6rem;
+  padding: 1.8rem 3rem;
+  border-radius: 5px;
+}
+/* ratings */
+div.ratings {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+div.ratings p {
+  display: block;
+  flex: 0 0 fit-content;
+  font-size: 1.5rem;
+}
+
+div.ratings-logos {
+  max-width: 150px;
+  flex-grow: 1;
+  /* flex: 1 1 100%; */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-around;
+}
+div.ratings-logos img {
+  cursor: pointer;
+}
+/* for mobile view only */
+.main > img {
+  display: none;
+}
+
+/* TRUSTED BY */
+.trusted-by p {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.brands {
+  --logos-gap: 10px;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--logos-gap);
+}
+.brands img {
+  width: 100%;
+  flex: 1 1 13rem;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 1000px) {
+  html {
+    font-size: 12px;
+  }
+  header.mobile {
+    display: none;
+  }
+  header.desktop {
+    display: flex;
+  }
+
+  .main img {
+    display: block;
+  }
+  .split {
+    display: flex;
+    gap: 5rem;
+  }
+  .split article {
+    flex-basis: 70%;
+  }
+  .split img {
+    width: 100%;
+    flex-basis: 30%;
+  }
+}
