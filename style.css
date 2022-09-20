@@ -3,7 +3,7 @@
   --white: #fff;
   --cream: #ffe8bf;
   --gray: #6c6c6c;
-  --green: #133416;
+  --green: #25662b;
   --black: #000000;
   --yellow: #f7b300;
 }
@@ -16,6 +16,9 @@ html {
 
 body {
   background-color: var(--cream);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
 }
 
 .wrap {
@@ -28,19 +31,56 @@ header.mobile {
   padding: 0 1rem 2rem 1rem;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 /* HEADER DEKSTOP */
 header.desktop {
   display: none;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+}
+header.desktop img {
+  scale: 1.2;
 }
 .menu ul {
   list-style: none;
   display: block;
 }
 .menu li {
+  font-size: 1.1rem;
   display: inline-block;
+  margin-right: 10px;
+  user-select: none;
+}
+/* sign in button */
+.sign {
+  display: inline-block;
+  border: 0;
+  background-color: transparent;
+  color: var(--gray);
+  font-size: 1.5rem;
+  margin-right: 2rem;
+  position: relative;
+  padding-bottom: 5px;
+}
+.sign::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: var(--gray);
+  transform: scaleX(0);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform-origin: left;
+  transition: 0.2s ease-out all;
+}
+.sign:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
 }
 /* SECTION MAIN */
 /* description */
@@ -67,34 +107,40 @@ p {
   color: var(--cream);
   font-weight: bold;
   font-size: 1.6rem;
-  padding: 1.8rem 3rem;
+  padding: 18px 25px;
   border-radius: 5px;
 }
+.try-free:hover {
+  background-color: #18421d;
+  cursor: pointer;
+}
 /* ratings */
-div.ratings {
+.ratings {
+  margin-top: 20px;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  max-height: 30px;
+  justify-content: center;
 }
-
-div.ratings p {
-  display: block;
-  flex: 0 0 fit-content;
-  font-size: 1.5rem;
+.ratings p {
+  display: inline-block;
+  line-height: 30px;
+  margin: 0;
 }
-
-div.ratings-logos {
+.ratings-logos {
+  display: inline-block;
+  max-height: 30px;
   max-width: 150px;
-  flex-grow: 1;
-  /* flex: 1 1 100%; */
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-around;
+}
+.ratings-logos .container {
+  display: grid;
+  height: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 div.ratings-logos img {
   cursor: pointer;
+  height: 100%;
 }
 /* for mobile view only */
 .main > img {
@@ -110,18 +156,66 @@ div.ratings-logos img {
 }
 
 .brands {
+  margin: 0 auto;
   --logos-gap: 10px;
   width: 100%;
-  max-width: 700px;
+  max-width: 900px;
   display: flex;
   flex-wrap: wrap;
   gap: var(--logos-gap);
 }
 .brands img {
+  max-width: calc(900px / 4 - 4 * --logos-gap);
   width: 100%;
   flex: 1 1 13rem;
 }
 
+/* hover block  products*/
+.menu .products {
+  position: relative;
+}
+.menu .products:hover .hover-block {
+  display: block;
+}
+.triangle {
+  position: absolute;
+  --triangle-size: 15px;
+  top: -15px;
+  left: 70px;
+  width: 0;
+  height: 0;
+  border-left: var(--triangle-size) solid transparent;
+  border-right: var(--triangle-size) solid transparent;
+  border-bottom: var(--triangle-size) solid var(--white);
+}
+.hover-block {
+  display: none;
+  position: absolute;
+  left: -50px;
+  top: 40px;
+  background-color: #fff;
+  width: 450px;
+  border-radius: 10px;
+  padding: 20px;
+}
+.hover-block div {
+  /* display: flex; */
+  margin-left: 50px;
+}
+.hover-block div h3 {
+  position: relative;
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+.hover-block div img {
+  position: absolute;
+  left: -30px;
+  top: 0;
+}
+.hover-block div p {
+  margin-top: 0;
+  font-size: 1rem;
+}
 /* MEDIA QUERIES */
 @media (min-width: 1000px) {
   html {
@@ -133,12 +227,19 @@ div.ratings-logos img {
   header.desktop {
     display: flex;
   }
+  .wrap {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 10% 1fr 10% 10%;
+  }
 
   .main img {
     display: block;
   }
   .split {
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 5rem;
   }
   .split article {
@@ -147,5 +248,15 @@ div.ratings-logos img {
   .split img {
     width: 100%;
     flex-basis: 30%;
+  }
+}
+
+@media (min-width: 1200px) {
+  html {
+    font-size: 16px;
+  }
+  .wrap {
+    margin: 0 auto;
+    max-width: 1200px;
   }
 }
